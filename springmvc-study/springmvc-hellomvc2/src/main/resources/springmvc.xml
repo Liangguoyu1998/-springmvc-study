@@ -1,0 +1,19 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!-- 前缀 -->
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <!-- 后缀 -->
+        <property name="suffix" value=".jsp"/>
+    </bean>
+    <!-- 注意：如果启动tomcat,输入url,报错500，ClassNotFound,可能是jar包没加进去，要到artifact中，在WEB-INF下面新建
+        一个lib文件夹，并手动将jar包加入到lib文件夹中 -->
+    <!-- 这里一定要注意，要写“/hello",我们请求的url为：http://localhost:8080/hello,不要把请求中的hello与
+        HelloController类中的vm.setViewName("hello")搞混了，这个hello是jsp的名字！！！看了很久才发现，哈哈！！！ -->
+    <bean id="/helloController" class="com.liang.controller.HelloController"/>
+
+</beans>

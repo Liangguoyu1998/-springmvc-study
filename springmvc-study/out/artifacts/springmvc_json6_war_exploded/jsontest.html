@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jsontest</title>
+    <script type="text/javascript">
+        //编写一个JavaScript对象 ES6
+        var user = {
+            name: "梁国宇",
+            age: 3,
+            sex: "男"
+        };
+        //将js对象转换为json对象；
+        var userjson = JSON.stringify(user);
+        console.log(userjson);
+        //将json对象转换为js对象
+        var obj = JSON.parse(userjson);
+        console.log(obj);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
